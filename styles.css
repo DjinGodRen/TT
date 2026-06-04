@@ -1,0 +1,140 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-2: #edf2f7;
+    --text: #162033;
+    --muted: #4b5563;
+    --accent: #5b6cff;
+    --accent-2: #1d4ed8;
+    --border: #dbe4ee;
+}
+
+body.dark-theme {
+    color-scheme: dark;
+    --bg: #111827;
+    --surface: #18212f;
+    --surface-2: #22304a;
+    --text: #edf2ff;
+    --muted: #cbd5e1;
+    --accent: #8ab4ff;
+    --accent-2: #c4d6ff;
+    --border: #334155;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; }
+
+.container {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.site-header,
+.site-footer {
+    background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    border-bottom: 1px solid var(--border);
+}
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--muted);
+}
+
+.header-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: var(--accent-2);
+    margin-bottom: 0.2rem;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h1 { font-size: clamp(2rem, 6vw, 2.8rem); margin-bottom: 0.25rem; }
+
+.tagline { color: var(--muted); margin-top: 0; }
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a,
+.portfolio-link {
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover,
+.portfolio-link:hover { text-decoration: underline; }
+
+.theme-toggle {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+main.container {
+    padding: 1.2rem 0 2rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.project-card {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+    nav ul { flex-wrap: wrap; }
+    .header-actions { align-items: flex-start; }
+}
