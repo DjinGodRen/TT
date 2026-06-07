@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronald Christian Jr. | Interactive Portfolio</title>
+    <meta name="description" content="Interactive portfolio page for Ronald Christian Jr. with a light/dark theme switch and portfolio link.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-row">
+            <div>
+                <p class="eyebrow">Portfolio</p>
+                <h1>Ronald Christian Jr.</h1>
+                <p class="tagline">Web Developer | Designer | Creator</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme">🌙 Dark Mode</button>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>I am a creative who blends design, development, and storytelling. I completed UX/UI coursework on Coursera and strengthened my skills in web development and Adobe Creative Suite during the pandemic.</p>
+        </section>
+
+        <section id="projects" class="card">
+            <h2>My Projects</h2>
+            <p>Explore my interactive web portfolio here:</p>
+            <a class="portfolio-link" href="https://xd.adobe.com/view/fb1d219d-d91c-4ed6-b1cf-6ea725405aef-ae4e/" target="_blank" rel="noopener noreferrer">Open the interactive portfolio</a>
+            <div class="project-card">
+                <h3>Interactive Web Portfolio</h3>
+                <p>This page highlights my design direction, creative projects, and web development experience. It also includes a simple theme switch for better viewing in light or dark mode.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Get In Touch</h2>
+            <p>Email: ronald.christianjr29@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ronald Christian Jr. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('portfolio-theme');
+
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-theme');
+            toggleButton.textContent = '☀️ Light Mode';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            toggleButton.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
